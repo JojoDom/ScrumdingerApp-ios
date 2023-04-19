@@ -21,14 +21,16 @@ struct MeetingView: View {
                     Text("Seconds Remaining").font(.caption)
                     Label("600", systemImage: "hourglass.bottomhalf.filled")
                 }
-            }
+            }.accessibilityElement(children: .ignore)
+                .accessibilityLabel("Time remaining")
+                .accessibilityValue("10 minutes")
             Circle().strokeBorder(lineWidth: 24)
             HStack(){
                 Text("Speaker 1 of 3")
                 Spacer()
                 Button(action: {}){
                     Image(systemName: "forward.fill")}
-            }
+            }.accessibilityLabel("Next speaker")
         }.padding()
     }
 }
